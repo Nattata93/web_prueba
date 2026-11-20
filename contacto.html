@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - DAM-XFP</title>
+</head> 
+
+<style> 
+  /* Esto es un comentario dentro de CSS*/ 
+    
+  /*  
+  selector (son label, section, aside, footer.. cualquier etiqueta reconocida en html) { 
+  propiedad1: valor1; 
+  propiedad2: valor2; 
+  } 
+  */ 
+
+   label{ 
+    display: block; /* esto hace que se convierta en una unica linea cada conjunto de label*/ 
+    margin: 2em; 
+
+   } 
+
+
+</style>
+<body>
+
+  <header>
+    <h1>Contacto</h1>
+  </header>
+
+  <nav> <!-- contenedor del menú de navegación del sitio -->
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">La empresa</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="tecnologias.html">Tecnologías</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- contenido principal del documento -->
+
+    <section>
+      <h2>Formulario de contacto</h2>
+      
+      <form method="get" action="recoger-formulario.php">  <!-- contenedor del forumulario 
+            action: es el destino de los datos del formulario. "A dónde los enviamos", por ejemplo a un fichero .php
+
+            method: la forma en la que enviamos los datos. Hay dos formas: 
+                GET: envía los datos a través de la URL. Los datos son visibles simple vista.
+                
+                POST: envía los datos a través de la cabecera de la petición HTTP/S. Los datos no son visibles a simple vista. Obligatorio utilizarlo si enviamos ficheros adjuntos. Siempre prácticamente obligatorio cuando enviamos información delicada (contraseñas, números de tarjeta, etc.)
+
+                ¡¡¡OJO!!! 
+                POST no es seguro, para datos confidenciales, debemos utilizar protocolo HTTPS (HTTP Seguro). Que nos permite enviar la información de forma cifrada.
+        -->
+
+        <label for="nombre">Nombre *</label>  <!-- acompaña al input -->
+        <input id="nombre" name="nombre_cliente" type="text" placeholder="Ej. Christian" required> 
+        </label>
+        <!-- id: identificador de la etiqueta
+            name: nombre de la variable con la que enviamos el dato del campo
+            type: tipo de dato a recoger, modifica el comportamiento en el navegador 
+            placeholder: texto de ayuda visual al usuario
+        -->
+
+        <label for="contrasena">Contraseña *</label>
+        <input id="contrasena" name="password" type="password">
+
+        <input type="submit">
+        <!-- 
+            GET: 
+            http://127.0.0.1:5500/recoger-formulario.php?nombre_cliente=Pepito
+
+            POST:
+            http://127.0.0.1:5500/recoger-formulario.php
+
+            GET: 
+            http://127.0.0.1:5500/recoger-formulario.php?nombre_cliente=Pepito&password=1234
+        --> 
+
+        <label for="email">Correo Electrónico  
+          <input id="email" name="mail" type="email"> 
+        </label>   
+         
+        <label for=""web">Web  
+          <input id="web" name="web" type="url">
+        </label>
+
+        </label>
+
+        <label for="telefono">Teléfono 
+          <input id="telefono" name="telefono" type="tel" maxlength="9" minlength="9">
+        </label> 
+
+        <label for="edad">Edad 
+          <input id="edad" name="edad" type="number" min="0" max="120" step="10">
+        </label>  
+
+        <label for="rango">Rango  
+          <input id="rango" name="rango" type="range" min="0" max="100" step="10">
+        </label> 
+      
+        <fieldset>  
+          <legend>Fecha y Hora</legend> 
+
+          <label for="fecha">Fecha 
+            <input id="fecha" name="fecha" type="date"> 
+          </label>  
+           
+          <label for="hora">Hora 
+            <input id="hora" name="hora" type="time">
+          </label>  
+            
+            <!-- 
+          datetime 
+          datetime-local
+          month  
+          -->
+
+        </fieldset>  
+          <legend>Selectores</legend> 
+           
+          <label for="lm"> 
+            <input id="lm" name="lm" type="checkbox" value="true" checked>LM
+          </label> 
+
+          <label for="prog"> 
+            <input id="prog" name="prog" type="checkbox" value="true">PRG
+          </label> 
+         
+        </fieldset>
+
+        
+         
+
+
+    </form>
+
+    </section>
+
+    <section>
+      <h2>Información de contacto</h2>
+      
+    </section>
+
+    <section>
+      <h2>Ubicación</h2>
+      <!-- insertaremos un Google Maps -->
+    </section>
+  </main>
+
+  <aside>
+    <!-- información adiccional o links internos -->
+  </aside>
+
+  <footer>
+    <!-- pie de página -->
+  </footer>
+
+</body>
+</html>
